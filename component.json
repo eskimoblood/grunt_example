@@ -1,0 +1,16 @@
+{
+  "name": "myProject",
+  "version": "1.0.0",
+  "dependencies": {
+    "backbone": "0.9.~",
+    "lodash": "1.0.~"
+  },
+  "exportsOverride": {
+    "backbone": {
+      "js": "backbone.js"
+    },
+    "lodash": {
+      "js": "lodash.js"
+    }
+  }
+}

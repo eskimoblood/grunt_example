@@ -1,0 +1,31 @@
+{
+  "name": "grunt-example",
+  "version": "0.0.1",
+  "author": "Andreas Köberle",
+  "description": "how to use grunt for production and development",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eskimoblood/grunt-example.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0rc4",
+    "grunt-contrib-watch": "~0.1.4",
+    "grunt-contrib-jshint": "~0.1.0",
+    "grunt-contrib-concat": "~0.1.1",
+    "grunt-contrib-uglify": "~0.1.0",
+    "grunt-contrib-manifest": "~0.2.0",
+    "grunt-contrib-mincss": "~0.3.2",
+    "grunt-contrib-copy": "https://github.com/gruntjs/grunt-contrib-copy/archive/master.tar.gz",
+    "grunt-md5": "~0.1.5",
+    "buster": "~0.6.0",
+    "grunt-buster": "~0.1.2",
+    "bower": "~0.6.8",
+    "grunt-bower-task": "~0.1.0",
+    "grunt-contrib-handlebars": "~0.3.3",
+    "grunt-usemin": "https://api.github.com/repos/yeoman/grunt-usemin/tarball"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.8"
+  }
+}
