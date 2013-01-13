@@ -59,7 +59,8 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'dist/prod.min.js': 'dist/prod.min.js',
-          'dist/lib.min.js': 'dist/lib.min.js'
+          'dist/lib.min.js': 'dist/lib.min.js',
+          'dist/app.min.js': 'dist/app.min.js'
         }
       }
     },
@@ -79,6 +80,15 @@ module.exports = function(grunt) {
             fs.writeFileSync('dist/index.html', replacedData);
 
           }
+        }
+      }
+    },
+    imageEmbed: {
+      dist: {
+        src: [ "dist/style.min.css" ],
+        dest: "dist/style.min.css",
+        options: {
+          baseDir: '../dev/css/'
         }
       }
     },
@@ -107,6 +117,21 @@ module.exports = function(grunt) {
       install: {
         //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
       }
+    },
+    connect: {
+      server: {
+        options: {
+          port: 9001,
+          keppalive: true
+        }
+      }
+    },
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: "dev/js/modules/"
+        }
+      }
     }
   });
 
@@ -116,16 +141,19 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.renameTask('copy', 'gruntContribCopy');
   grunt.loadNpmTasks('grunt-usemin');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-mincss');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-manifest');
   grunt.loadNpmTasks('grunt-md5');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
-
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks("grunt-image-embed");
   grunt.loadNpmTasks('grunt-bower-task');
 
 
-  grunt.registerTask('dist', ['gruntContribCopy', 'useminPrepare', 'usemin', 'concat', 'uglify', 'md5', 'manifest']);
+  grunt.registerTask('dist',
+    ['gruntContribCopy', 'useminPrepare', 'usemin', 'requirejs', 'concat', 'uglify', 'imageEmbed', 'md5', 'manifest']);
 
 };
