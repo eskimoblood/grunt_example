@@ -25,7 +25,8 @@
     "grunt-usemin": "https://api.github.com/repos/yeoman/grunt-usemin/tarball",
     "grunt-contrib-requirejs": "~0.3.4",
     "grunt-contrib-connect": "~0.1.0",
-    "grunt-image-embed": "~0.2.0"
+    "grunt-image-embed": "~0.2.0",
+    "grunt-jsbeautifier": "~0.1.1"
   },
   "license": "MIT",
   "engines": {

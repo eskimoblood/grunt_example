@@ -1,4 +1,0 @@
-example on how to use grunt
-
-use `grunt watch` for development
-use `grunt dist` to create an production version

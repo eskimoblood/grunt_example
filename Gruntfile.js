@@ -29,6 +29,13 @@ module.exports = function(grunt) {
         eqnull: true
       }
     },
+    'jsbeautifier': {
+      files: ['Gruntfile.js', 'dev/js/*.js', 'test/**/*.js'],
+      options: {
+        'indent_size': 2,
+        "max_preserve_newlines": 2
+      }
+    },
     handlebars: {
       compile: {
         files: {
@@ -83,11 +90,14 @@ module.exports = function(grunt) {
         }
       }
     },
+    //replace images path in css with data-uri
     imageEmbed: {
       dist: {
-        src: [ "dist/style.min.css" ],
-        dest: "dist/style.min.css",
+        src: ['dist/style.min.css'],
+        dest: 'dist/style.min.css',
         options: {
+          //needs a hack in the image-embed task code see this issue:
+          //https://github.com/ehynds/grunt-image-embed/pull/10
           baseDir: '../dev/css/'
         }
       }
@@ -95,16 +105,14 @@ module.exports = function(grunt) {
     //create a manifest file for all js and css files
     manifest: {
       generate: {
-        src: [
-          '*.js',
-          '*.css'
-        ],
+        src: ['*.js', '*.css'],
         options: {
           basePath: 'dist/',
           network: ['*', 'http://*', 'https://*']
         }
       }
     },
+    // run the buster tests
     buster: {
       test: {
         config: 'test/buster.js'
@@ -125,14 +133,8 @@ module.exports = function(grunt) {
           keppalive: true
         }
       }
-    },
-    requirejs: {
-      compile: {
-        options: {
-          baseUrl: "dev/js/modules/"
-        }
-      }
     }
+
   });
 
   grunt.loadNpmTasks('grunt-buster');
@@ -149,11 +151,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-md5');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks("grunt-image-embed");
-  grunt.loadNpmTasks('grunt-bower-task');
+  grunt.loadNpmTasks('grunt-image-embed');
+  grunt.loadNpmTasks('grunt-bower-task')
+  grunt.loadNpmTasks('grunt-jsbeautifier')
 
 
   grunt.registerTask('dist',
     ['gruntContribCopy', 'useminPrepare', 'usemin', 'requirejs', 'concat', 'uglify', 'imageEmbed', 'md5', 'manifest']);
-
+  grunt.registerTask('preCommit', ['buster', 'jsbeautifier']);
+  
 };

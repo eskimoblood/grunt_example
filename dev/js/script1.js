@@ -1,3 +1,7 @@
 function doubleIt(a) {
-  return 2 * a;
+  if (a) {
+    a = 2
+              }
+
+    return 2 * a;
 }
