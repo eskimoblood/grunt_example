@@ -29,13 +29,15 @@ module.exports = function(grunt) {
         eqnull: true
       }
     },
+    //format js files
     'jsbeautifier': {
       files: ['Gruntfile.js', 'dev/js/*.js', 'test/**/*.js'],
       options: {
         'indent_size': 2,
-        "max_preserve_newlines": 2
+        'max_preserve_newlines': 2
       }
     },
+    //compile handlebars templates into js file
     handlebars: {
       compile: {
         files: {
@@ -45,9 +47,16 @@ module.exports = function(grunt) {
     },
     //
     gruntContribCopy: {
+      //copy index.html into dist folder
       dist: {
         files: {
           'dist/index.html': 'dev/index.html'
+        }
+      },
+      // copy pre-commit hook in to .git-hooks folder after npm install
+      'hooks': {
+        'files': {
+          '.git/hooks/pre-commit': 'hooks/pre-commit'
         }
       }
     },
@@ -152,12 +161,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-image-embed');
-  grunt.loadNpmTasks('grunt-bower-task')
-  grunt.loadNpmTasks('grunt-jsbeautifier')
+  grunt.loadNpmTasks('grunt-bower-task');
+  grunt.loadNpmTasks('grunt-jsbeautifier');
+  grunt.loadNpmTasks('grunt-smushit');
 
 
   grunt.registerTask('dist',
-    ['gruntContribCopy', 'useminPrepare', 'usemin', 'requirejs', 'concat', 'uglify', 'imageEmbed', 'md5', 'manifest']);
+    ['gruntContribCopy:dist', 'useminPrepare', 'usemin', 'requirejs', 'concat', 'uglify', 'imageEmbed', 'md5', 'manifest']);
   grunt.registerTask('preCommit', ['buster', 'jsbeautifier']);
-  
+
 };
