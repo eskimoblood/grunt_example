@@ -1,3 +1,3 @@
 function doubleIt(a) {
-    return 2 * a;
+  return 2 * a;
 }

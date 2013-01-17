@@ -166,8 +166,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-smushit');
 
 
-  grunt.registerTask('dist',
-    ['gruntContribCopy:dist', 'useminPrepare', 'usemin', 'requirejs', 'concat', 'uglify', 'imageEmbed', 'md5', 'manifest']);
+  grunt.registerTask('dist', ['gruntContribCopy:dist', 'useminPrepare', 'usemin', 'requirejs', 'concat', 'uglify', 'imageEmbed', 'md5', 'manifest']);
   grunt.registerTask('preCommit', ['buster', 'jsbeautifier']);
 
 };
