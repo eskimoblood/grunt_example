@@ -167,6 +167,7 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask('dist', ['gruntContribCopy:dist', 'useminPrepare', 'usemin', 'requirejs', 'concat', 'uglify', 'imageEmbed', 'md5', 'manifest']);
+
   grunt.registerTask('preCommit', ['buster', 'jsbeautifier']);
 
 };

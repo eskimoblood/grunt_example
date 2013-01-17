@@ -22,7 +22,7 @@
     "bower": "~0.6.8",
     "grunt-bower-task": "~0.1.0",
     "grunt-contrib-handlebars": "~0.3.3",
-    "grunt-usemin": "https://api.github.com/repos/yeoman/grunt-usemin/tarball",
+    "grunt-usemin": "https://api.github.com/repos/eskimoblood/grunt-usemin/tarball",
     "grunt-contrib-requirejs": "~0.3.4",
     "grunt-contrib-connect": "~0.1.0",
     "grunt-image-embed": "~0.2.0",
