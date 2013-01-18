@@ -32,6 +32,7 @@ So a client need only load a file that has changed. And at manifest file with al
 ##Ideas
 
 * create JSDoc
-* create Living Style Guide
-* run CSSLint
+* create Living Style Guide (https://npmjs.org/package/grunt-styleguide)
+* run CSSLint (https://github.com/jzaefferer/grunt-css)
 * run SmushIt to strip down images
+* run plato (https://npmjs.org/package/plato)
