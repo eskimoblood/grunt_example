@@ -1,13 +1,13 @@
 /*global module:false*/
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
     pkg: '<json:package.json>',
     //run jshint, the busterjs tests and compile the handlbar templates every time a file changed
     watch: {
-      files: ['Gruntfile.js', 'dev/js/*.js', 'test/**/*.js', 'dev/templates/*.hbs'],
-      tasks: ['jshint', 'buster', 'handlebars']
+      files: ['Gruntfile.js', 'dev/js/*.js', 'test/**/*.js', 'dev/templates/*.hbs', 'dev/css/*'],
+      tasks: ['jshint', 'buster', 'handlebars', 'csslint']
     },
     //hint all the js files
     jshint: {
@@ -29,6 +29,15 @@ module.exports = function(grunt) {
         eqnull: true
       }
     },
+    csslint: {
+      watch: {
+        src: 'dev/css/*',
+        rules: {
+          'import': false,
+          'overqualified-elements': 2
+        }
+      }
+    },
     //format js files
     'jsbeautifier': {
       files: ['Gruntfile.js', 'dev/js/*.js', 'test/**/*.js'],
@@ -37,6 +46,7 @@ module.exports = function(grunt) {
         'max_preserve_newlines': 2
       }
     },
+
     //compile handlebars templates into js file
     handlebars: {
       compile: {
@@ -70,6 +80,12 @@ module.exports = function(grunt) {
       html: ['dist/index.html'],
       css: ['dist/*.css']
     },
+    cssmin: {
+      min: {
+        src: 'dist/style.min.css',
+        dest: 'dist/style.min.css'
+      }
+    },
     //just uglify the concatenated the files
     uglify: {
       dist: {
@@ -88,7 +104,7 @@ module.exports = function(grunt) {
         },
         //overide the pathes in the index.html with the new md5 name
         options: {
-          callback: function(newPath, oldPath, content) {
+          callback: function (newPath, oldPath, content) {
             var fs = require('fs')
             fs.unlink(oldPath);
             var file = fs.readFileSync('dist/index.html', 'utf8');
@@ -163,10 +179,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-image-embed');
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-jsbeautifier');
-  grunt.loadNpmTasks('grunt-smushit');
+  grunt.loadNpmTasks('grunt-css');
 
 
-  grunt.registerTask('dist', ['gruntContribCopy:dist', 'useminPrepare', 'usemin', 'requirejs', 'concat', 'uglify', 'imageEmbed', 'md5', 'manifest']);
+  grunt.registerTask('dist', ['gruntContribCopy:dist', 'useminPrepare', 'usemin', 'requirejs', 'concat', 'uglify', 'cssmin', /*'imageEmbed', 'md5', 'manifest'*/]);
 
   grunt.registerTask('preCommit', ['buster', 'jsbeautifier']);
 

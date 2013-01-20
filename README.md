@@ -2,7 +2,10 @@
 
 ##Bootstrap the project
 Running `npm install` will install grunt and all needed grunt tasks.
-It also copy a pre-commit hook in the `git/hooks`folder
+It also copy a pre-commit hook in the `git/hooks`folder.
+
+Note, you have to install [phantomjs](http://phantomjs.org/) to get the tests run.
+Note, you have to install buster globally with npm install -g buster
 
 ##Development
 With grunt you can simply create a task that will be executed whenever a file is changed.
@@ -33,6 +36,5 @@ So a client need only load a file that has changed. And at manifest file with al
 
 * create JSDoc
 * create Living Style Guide (https://npmjs.org/package/grunt-styleguide)
-* run CSSLint (https://github.com/jzaefferer/grunt-css)
 * run SmushIt to strip down images
 * run plato (https://npmjs.org/package/plato)

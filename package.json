@@ -8,25 +8,26 @@
     "url": "https://github.com/eskimoblood/grunt-example.git"
   },
   "devDependencies": {
-    "grunt": "~0.4.0rc4",
+    "grunt": "~0.4.0",
     "grunt-contrib-watch": "~0.1.4",
     "grunt-contrib-jshint": "~0.1.0",
-    "grunt-contrib-concat": "~0.1.1",
-    "grunt-contrib-uglify": "~0.1.0",
+    "grunt-contrib-concat": "~0.1.2",
+    "grunt-contrib-uglify": "~0.1.1",
     "grunt-contrib-manifest": "~0.2.0",
     "grunt-contrib-mincss": "~0.3.2",
-    "grunt-contrib-copy": "https://github.com/gruntjs/grunt-contrib-copy/archive/master.tar.gz",
+    "grunt-contrib-copy": "https://github.com/ctalkington/grunt-contrib-copy/archive/patch4.tar.gz",
     "grunt-md5": "~0.1.5",
     "buster": "~0.6.0",
     "grunt-buster": "~0.1.2",
     "bower": "~0.6.8",
     "grunt-bower-task": "~0.1.0",
-    "grunt-contrib-handlebars": "~0.3.3",
+    "grunt-contrib-handlebars": "https://api.github.com/repos/gruntjs/grunt-contrib-handlebars/tarball",
     "grunt-usemin": "https://api.github.com/repos/eskimoblood/grunt-usemin/tarball",
     "grunt-contrib-requirejs": "~0.3.4",
     "grunt-contrib-connect": "~0.1.0",
     "grunt-image-embed": "~0.2.0",
-    "grunt-jsbeautifier": "~0.1.2"
+    "grunt-jsbeautifier": "~0.1.2",
+    "grunt-css": "~0.5.3"
   },
   "scripts": {
     "postinstall": "grunt gruntContribCopy:hooks",
