@@ -158,8 +158,14 @@ module.exports = function (grunt) {
           keppalive: true
         }
       }
+    },
+    plato: {
+      target: {
+        files: {
+          'report': ['dev/js/*.js']
+        }
+      }
     }
-
   });
 
   grunt.loadNpmTasks('grunt-buster');
@@ -180,6 +186,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-jsbeautifier');
   grunt.loadNpmTasks('grunt-css');
+  grunt.loadNpmTasks('grunt-plato');
 
 
   grunt.registerTask('dist', ['gruntContribCopy:dist', 'useminPrepare', 'usemin', 'requirejs', 'concat', 'uglify', 'cssmin', /*'imageEmbed', 'md5', 'manifest'*/]);

@@ -37,4 +37,3 @@ So a client need only load a file that has changed. And at manifest file with al
 * create JSDoc
 * create Living Style Guide (https://npmjs.org/package/grunt-styleguide)
 * run SmushIt to strip down images
-* run plato (https://npmjs.org/package/plato)

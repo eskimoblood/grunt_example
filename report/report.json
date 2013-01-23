@@ -1,0 +1,104 @@
+{
+  "summary": {
+    "total": {
+      "sloc": 6,
+      "maintainability": 321.86952421244047
+    },
+    "average": {
+      "sloc": 3,
+      "maintainability": "160.93"
+    }
+  },
+  "reports": [
+    {
+      "info": {
+        "file": "dev/js/script1.js",
+        "fileShort": "1.js",
+        "fileSafe": "1_js",
+        "link": "files/1_js/index.html"
+      },
+      "complexity": {
+        "aggregate": {
+          "line": 1,
+          "complexity": {
+            "sloc": {
+              "physical": 3,
+              "logical": 2
+            },
+            "cyclomatic": 1,
+            "halstead": {
+              "operators": {
+                "distinct": 3,
+                "total": 3,
+                "identifiers": [
+                  "__stripped__"
+                ]
+              },
+              "operands": {
+                "distinct": 3,
+                "total": 4,
+                "identifiers": [
+                  "__stripped__"
+                ]
+              },
+              "length": 7,
+              "vocabulary": 6,
+              "difficulty": 2,
+              "volume": 18.094737505048094,
+              "effort": 36.18947501009619,
+              "bugs": 0.006031579168349364,
+              "time": 2.0105263894497885
+            }
+          }
+        },
+        "module": "1.js",
+        "maintainability": 161.73846831223045
+      }
+    },
+    {
+      "info": {
+        "file": "dev/js/script2.js",
+        "fileShort": "2.js",
+        "fileSafe": "2_js",
+        "link": "files/2_js/index.html"
+      },
+      "complexity": {
+        "aggregate": {
+          "line": 1,
+          "complexity": {
+            "sloc": {
+              "physical": 3,
+              "logical": 2
+            },
+            "cyclomatic": 1,
+            "halstead": {
+              "operators": {
+                "distinct": 3,
+                "total": 3,
+                "identifiers": [
+                  "__stripped__"
+                ]
+              },
+              "operands": {
+                "distinct": 3,
+                "total": 5,
+                "identifiers": [
+                  "__stripped__"
+                ]
+              },
+              "length": 8,
+              "vocabulary": 6,
+              "difficulty": 2.5,
+              "volume": 20.67970000576925,
+              "effort": 51.69925001442312,
+              "bugs": 0.006893233335256416,
+              "time": 2.87218055635684
+            }
+          }
+        },
+        "module": "2.js",
+        "maintainability": 160.13105590021001
+      }
+    }
+  ]
+}
